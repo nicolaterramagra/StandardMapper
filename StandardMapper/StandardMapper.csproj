@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Authors>Nicola Terramagra</Authors>
+    <Company>Nicola Terramagra</Company>
+    <Description>StandardMapper is a simple objects/models mapper you can use to tranfer the value of the properties of an object/model into another object/model.</Description>
+    <PackageTags>Mapping, Mapper</PackageTags>
+    <PackageProjectUrl>https://github.com/nicolaterramagra/StandardMapper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nicolaterramagra/StandardMapper</RepositoryUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <Version>1.0.2-beta</Version>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
