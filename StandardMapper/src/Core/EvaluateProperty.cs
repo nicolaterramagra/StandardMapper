@@ -31,7 +31,9 @@ namespace StandardMapper
             {
                 // String is considered as a primitive type
                 if (typeof(string).IsAssignableFrom(outPropertyType))
+                {
                     MapProperty(inProperty.GetValue(inObject), outProperty, outPropertyType, outObject);
+                }
                 else
                 {
                     // Mapper result
@@ -40,7 +42,7 @@ namespace StandardMapper
                     // Recall a Map method with Invoke api
                     object[] paramArgs = new object[] { inProperty.GetValue(inObject), mappedObject, null };
                     typeof(Mapper).GetMethod((mapType == MapType.Simple) ? "Map" : "OutMap")
-                        .MakeGenericMethod(new Type[] { inProperty.PropertyType, outPropertyType })
+                        .MakeGenericMethod(new [] { inProperty.PropertyType, outPropertyType })
                         .Invoke(this, paramArgs);
 
                     mappedObject = paramArgs[1];

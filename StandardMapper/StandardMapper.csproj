@@ -11,7 +11,7 @@
     <PackageProjectUrl>https://github.com/nicolaterramagra/StandardMapper</PackageProjectUrl>
     <RepositoryUrl>https://github.com/nicolaterramagra/StandardMapper</RepositoryUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 

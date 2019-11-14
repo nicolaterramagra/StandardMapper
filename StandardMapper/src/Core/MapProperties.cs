@@ -52,25 +52,35 @@ namespace StandardMapper
                 else
                 {
                     if (outPropertyType.IsEnum)
+                    {
                         outProperty.SetValue(outObject, Enum.Parse(outPropertyType, inObjectValue.ToString()));
+                    }
                     else
                     {
                         if (outPropertyType.IsArray)
+                        {
                             outProperty.SetValue(outObject, inObjectValue.GetType()
-                                                                .GetMethod("ToArray").Invoke(inObjectValue, null));
+                                                    .GetMethod("ToArray").Invoke(inObjectValue, null));
+                        }
                         else
                         {
                             // Guid does not implement the IConvertible interface; if you try to Convert Guid
                             // into String, the System throws an InvalidCastException. 
                             // In this case, StandardMapper call the ToString() method 
                             if (inObjectValue.GetType().IsAssignableFrom(typeof(Guid)) && outPropertyType.FullName == "System.String")
+                            {
                                 outProperty.SetValue(outObject, inObjectValue.ToString());
+                            }
                             // Is not possible the direct cast from String to Guid; in this case, StandardMapper
                             // create a new instance of Guid for the out property
                             else if (inObjectValue.GetType().FullName == "System.String" && outPropertyType.IsAssignableFrom(typeof(Guid)))
+                            {
                                 outProperty.SetValue(outObject, new Guid(inObjectValue.ToString()));
+                            }
                             else
+                            {
                                 outProperty.SetValue(outObject, Convert.ChangeType(inObjectValue, outPropertyType));
+                            }
                         }
                     }
                 }

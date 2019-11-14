@@ -37,14 +37,16 @@ namespace StandardMapper
                 if (outEnumerableItemsType.IsClass)
                 {
                     if (typeof(string).IsAssignableFrom(outEnumerableItemsType))
+                    {
                         appList.Add(item);
+                    }
                     else
                     {
                         object mappedObject = Activator.CreateInstance(outEnumerableItemsType);
                         object[] paramArgs = new object[] { item, mappedObject, null };
 
                         typeof(Mapper).GetMethod((mapType == MapType.Simple) ? "Map" : "OutMap")
-                            .MakeGenericMethod(new Type[] { item.GetType(), outEnumerableItemsType })
+                            .MakeGenericMethod(new [] { item.GetType(), outEnumerableItemsType })
                             .Invoke(this, paramArgs);
 
                         mappedObject = paramArgs[1];

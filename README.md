@@ -3,11 +3,11 @@
 StandardMapper is a simple objects/models mapper you can use to tranfer the value of the properties of an object/model into another object/model. The mapping process is based
 on the properties names, that are must be the same between the two objects/models to map.
 
-**Language/Technologies**
+## Language/Technologies
 
-StandardMapper is written in C#. It is based on NETStandard 2.0.3, then you can use it with different platforms. (https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md)
+StandardMapper is written in C#. It is based on NETStandard 2.0.3, then you can use it with different platforms. (<https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md>)
 
-**Usage**
+## Usage
 
 ```cs
 using StandardMapper;
@@ -67,13 +67,13 @@ Mapper simpleMapper = new Mapper();
 simpleMapper.Map(object1, object2);  // result: object2.Name = "John", object2.Surname = "Doe";
 ```
 
-**Limitations**
+## Limitations
 
 StandardMapper doesn't currently support the mapping of dictionaries. This feature will added to the project in the next future. 
 
-**Installation**
+## Installation
 
-StandardMapper is on NuGet (https://www.nuget.org/packages/StandardMapper).
+StandardMapper is on NuGet (<https://www.nuget.org/packages/StandardMapper>).
 
 From .NET Core command line:
 
@@ -89,6 +89,6 @@ From Visual Studio package manager console:
 
 Alternatively, you can use the equivalent command on Visual Studio UI.
 
-**License**
+## License
 
 StandardMapper is an open source project released under **MIT** license.

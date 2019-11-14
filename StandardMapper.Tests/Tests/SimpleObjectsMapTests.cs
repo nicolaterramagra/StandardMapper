@@ -52,7 +52,7 @@ namespace Standardmapper.Tests.Tests
         public void OutMap_BetweenTwoClasses_ExcludeProperties_Test()
         {
             var entity = new MockEntity { Id = 1, Name = "John", Surname = "Doe" };
-            mapperFix.mapper.OutMap(entity, out MockDto dto, new string[] { "Id" });
+            mapperFix.mapper.OutMap(entity, out MockDto dto, new[] { "Id" });
 
             Assert.NotNull(dto);
             Assert.Equal(0, dto.Id);
@@ -179,6 +179,7 @@ namespace Standardmapper.Tests.Tests
             var outModel = new MockEntitySetMethodNull();
 
             mapperFix.mapper.Map(entity, outModel);
+
             Assert.Equal(1, outModel.Id);
             Assert.Null(outModel.Name);
             Assert.Equal("Targaryen", outModel.Surname);

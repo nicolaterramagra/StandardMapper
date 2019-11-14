@@ -8,7 +8,9 @@ namespace StandardMapper.Tests.Helpers
         public static void AssertTwoListsAreEqual(IList expected, IList actual)
         {
             if (expected.Count != actual.Count)
+            {
                 Error($"Expected list contains {expected.Count} elements, but actual list contains {actual.Count}");
+            }
 
             foreach(object expectedItem in expected)
             {
